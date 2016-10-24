@@ -1,0 +1,49 @@
+<view  stytle=" overflow-x: hidden; overflow-y: auto;">
+<view class="serach">
+<view class="serach_view_show" bindtap="bindtap"> <span class="fa fa-camera-retro"></span>搜索</view>
+</view>
+ <toast hidden="{{isHiddenToast}}" stytle="display:flex  width:100rpx" duration="1000" bindchange="toastChange">
+    努力开发中...
+  </toast>
+<view class="section section_gap swiper">
+    <swiper indicator-dots="true" autoplay="true" interval="3000" duration="1200">
+        <block wx:for="{{swiperimages}}">
+            <swiper-item class="swipe_image" style="background-image:url({{item.image}});"/>
+        </block>
+    </swiper>   
+</view>
+<view  class="item">
+    <view class="item_left" class="top_image"  bindtap="isShowToast">
+        <image src="/images/RB.png" class="image"/>
+        <view class="mark text-middle"><text class="text">日本</text></view>
+    </view>
+    <view class="item_right" class="top_image" bindtap="isShowToast">
+        <image src="/images/HG.png" class="image"/>
+        <view class="mark text-middle" ><text class="text">韩国</text></view>
+    </view>
+    <view class="item_right" class="top_image" bindtap="isShowToast">
+        <image src="/images/MG.png" class="image"/>
+        <view class="mark text-middle" ><text class="text">美国</text></view>
+    </view>
+    <view class="item_right" class="top_image" bindtap="isShowToast">
+        <image src="/images/TW.png" class="image"/>
+        <view class="mark text-middle" ><text class="text">台湾地区</text></view>
+    </view>
+    <view class="item_right" class="top_image" bindtap="isShowToast">
+        <image src="/images/YG.png" class="image"/>
+        <view class="mark text-middle" ><text class="text">英国</text></view>
+    </view>
+</view>
+<view  class="line"></view>
+  <view class="message__list">
+     <block wx:for="{{messages}}"  wx:for-index="idx">
+          <view class="item-tree">
+            <image src="{{item.icon}}" class="tree_image"/>
+            <text class="title">{{item.groupName}}</text>
+             <text class="time">{{item.number}}</text>
+            </view>
+          <view  class="line" wx:if="{{idx==1}}"></view>
+         <view  class="line-narrow"wx:if="{{idx!=1}}" ></view>
+      </block>
+  </view>
+</view>
